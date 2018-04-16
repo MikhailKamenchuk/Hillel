@@ -25,4 +25,32 @@ let maths = {
    }
 };
 
-maths.sum().sum().mul().mul().sum().showResult();
+maths.sum().sum().mul().mul().sum().showResult
+
+//Исправление функции setTimeout несколькими способами
+// First
+function doTimeout(index) {
+	setTimeout(function() { 
+	console.log(index); 
+	}, 100);
+};
+
+for (var i = 0; i < 10; i++){
+	doTimeout(i);
+};
+
+// Second
+for(var i = 0; i < 10; i++) {
+	(function(i) { 
+		setTimeout(function() {
+		console.log(i);
+		}, i * 100)
+	})(i); 
+};
+
+// Third
+for (var i = 0; i < 10; i++) {  
+    setTimeout(function(n){ 
+      console.log(n); 
+    }.bind(null, i), i * 100);
+};
