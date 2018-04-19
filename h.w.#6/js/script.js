@@ -27,7 +27,7 @@ let dateEnd = 1976;
 function showStudentsByPeriod() {
   let result = [];
 
-  for (let i = 0; i < students.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (this[i].startYear >= dateStart && this[i].startYear <= dateEnd || this[i].endYear >= dateStart && this[i].endYear <= dateEnd ) {
       result.push(this[i].name); 
     }
@@ -36,3 +36,27 @@ function showStudentsByPeriod() {
 };
 
 showStudentsByPeriod.call(students);
+
+let firstYearOfUniversityWork = 1965;
+let nowYear = 1997;
+
+function showMaxAmountStudentsByPeriod() {
+  let amount = 0;
+  let year;
+  for (let i = firstYearOfUniversityWork; i <= nowYear; i++){
+    let currentAmount = 0;
+    for(let j = 0; j < this.length; j++) { 
+      if (i >= this[j].startYear && i <= this[j].endYear){
+           currentAmount++;
+      }; 
+    }; 
+    if (currentAmount >= amount) {
+      amount = currentAmount;
+      year = i;
+    };      
+  };
+return alert(`The greatest amount of students ${amount} studied in ${year} year`);
+  
+};
+
+showMaxAmountStudentsByPeriod.call(students);
