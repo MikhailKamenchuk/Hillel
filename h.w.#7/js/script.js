@@ -36,10 +36,16 @@ alert(applyAll(div, 8, 4, 2));
 //Функция Фибоначчи
 
 let ask = +prompt('Введите число Фибоначчи', '5')
-
 function fibonacci(n) {
-  let a = 1;
-  let b = 1;
+  let a;
+  let b;
+  if (n === 0) {
+    b = 0;
+    a = 0;
+  }else {
+    b = 1;
+    a = 1;
+  };
   for (let i = 3; i <= n; i++) {
     let c = a + b;
     a = b;
@@ -48,4 +54,4 @@ function fibonacci(n) {
   return b;
 };
 
-alert(fibonacci(ask));
+console.log(fibonacci(ask));
