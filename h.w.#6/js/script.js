@@ -17,8 +17,7 @@ let students = [
   {name: 'Sonya James', startYear: 1965, endYear: 1969},
   {name: 'Lori Makenroy', startYear: 1990, endYear: 1994},
   {name: 'Brayan Ostin', startYear: 1991, endYear: 1996},
-  {name: 'Kelly Roland', startYear: 1966, endYear: 1971},
-
+  {name: 'Kelly Roland', startYear: 1966, endYear: 1971}
 ];
 
 let dateStart = 1971;
@@ -26,13 +25,13 @@ let dateEnd = 1976;
 
 function showStudentsByPeriod() {
   let result = [];
-
   for (let i = 0; i < this.length; i++) {
-    if (this[i].startYear >= dateStart && this[i].startYear <= dateEnd || this[i].endYear >= dateStart && this[i].endYear <= dateEnd ) {
+    let conditions = this[i].startYear >= dateStart && this[i].startYear <= dateEnd || this[i].endYear >= dateStart && this[i].endYear <= dateEnd;
+    if (conditions) {
       result.push(this[i].name); 
     }
   };
-  return alert(`In the period from ${dateStart} to ${dateEnd}, such students studied: ${result}`);
+  return console.log(`In the period from ${dateStart} to ${dateEnd}, such students studied: ${result}`);
 };
 
 showStudentsByPeriod.call(students);
@@ -55,8 +54,7 @@ function showMaxAmountStudentsByPeriod() {
       year = i;
     };      
   };
-return alert(`The greatest amount of students ${amount} studied in ${year} year`);
-  
+return console.log(`The greatest amount of students - ${amount}, studied in ${year} year`);  
 };
 
 showMaxAmountStudentsByPeriod.call(students);
