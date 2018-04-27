@@ -1,0 +1,19 @@
+input[type = 'text']{
+  width:20px;
+  margin-top:5px;
+}
+
+input[type = 'submit']{
+  margin-top: 10px;
+}
+table {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid gray;
+  padding: 2px 5px;
+  text-align: center;
+}
+#for-table{
+	margin-top:15px;
+}

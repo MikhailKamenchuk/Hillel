@@ -1,166 +1,88 @@
-<!doctype html>
-<html lang="ru" class="working-hover mdl-js">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script>window.currentUser = null;</script><script>window.rateUsdRub = 61.77;</script>
-    <title itemprop="name">Введение в JavaScript</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script>
-    <link href="css/css.css" rel="stylesheet">
-
-    <!-- favicon the rest-->
-
-    <link href="css/styles.css" rel="stylesheet">
-    <script src="js/init.js"></script>
-    <script src="js/head.js" ></script>
-    <script src="js/footer.js"></script>
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<script src="./js/script.js" async="index.html"></script>
+	<title>Layout</title>
 </head>
-<body class="">
-<div class="page-wrapper page-wrapper_sidebar_on">
-    <!--[if lt IE 10]>
-    <div style="color:red;text-align:center">Извините, IE&lt;10 не поддерживается, пожалуйста используйте более новый браузер.</div>
-    <![endif]-->
-    <div class="sitetoolbar sitetoolbar_tutorial">
-        <div class="sitetoolbar__content">
-            <div class="sitetoolbar__logo-wrap">
-                <a href="http://learn.javascript.ru/" class="sitetoolbar__link sitetoolbar__link_logo">
-                    <object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="images/sitetoolbar__logo_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object>
-                    <img src="images/sitetoolbar__logo_small_ru.svg" width="80" class="sitetoolbar__logo sitetoolbar__logo_small" alt="">
-                </a>
-            </div>
-            <div class="sitetoolbar__nav-toggle-wrap"><button type="button" class="sitetoolbar__nav-toggle"></button></div>
-            <nav class="sitetoolbar__sections">
-                <ul class="sitetoolbar__sections-list">
-                    <li class="sitetoolbar__section sitetoolbar__section_current"><a href="http://learn.javascript.ru/tutorial" class="sitetoolbar__link">Учебник</a></li>
-                    <li class="sitetoolbar__section"><a href="http://learn.javascript.ru/courses" class="sitetoolbar__link">Курсы</a></li>
-                    <li class="sitetoolbar__section"><a href="https://javascript.ru/forum/" class="sitetoolbar__link">Форум</a></li>
-                    <li class="sitetoolbar__section"><a href="https://es5.javascript.ru/" class="sitetoolbar__link">ES5</a></li>
-                    <li class="sitetoolbar__section"><a href="http://learn.javascript.ru/quiz" class="sitetoolbar__link">Тесты знаний</a></li>
-                    <li class="sitetoolbar__section"><a href="http://learn.javascript.ru/jobs/" class="sitetoolbar__link">Вакансии</a></li>
-                    <li class="sitetoolbar__section sitetoolbar__section_dropdown">
-                        <button data-dropdown-toggler="" class="sitetoolbar__dropdown-button">Скринкасты</button>
-                        <div class="sitetoolbar__dropdown-wrap">
-                            <div class="sitetoolbar__dropdown-body">
-                                <ul class="sitetoolbar__dropdown-items">
-                                    <li class="sitetoolbar__dropdown-item"><a href="http://learn.javascript.ru/screencast/nodejs" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Node.js</a></li>
-                                    <li class="sitetoolbar__dropdown-item"><a href="http://learn.javascript.ru/screencast/webpack" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Webpack</a></li>
-                                    <li class="sitetoolbar__dropdown-item"><a href="http://learn.javascript.ru/screencast/gulp" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">Gulp 4</a></li>
-                                    <li class="sitetoolbar__dropdown-item"><a href="http://learn.javascript.ru/screencast/react" class="sitetoolbar__dropdown-link sitetoolbar__secondary-link">React.js</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <div class="sitetoolbar__book-wrap"><a href="http://learn.javascript.ru/ebook" class="buy-book-button"><span class="buy-book-button__extra-text">Купить</span>EPUB/PDF</a></div>
-            <div class="sitetoolbar__login-wrap"><button data-action-login="" class="sitetoolbar__login"></button></div>
-            <div class="sitetoolbar__search-wrap">
-                <div class="sitetoolbar__search-content">
-                    <form method="GET" action="http://learn.javascript.ru/search" class="sitetoolbar__search">
-                        <button type="button" class="sitetoolbar__search-toggle"></button>
-                        <div class="sitetoolbar__search-input">
-                            <div class="text-input"><input name="query" placeholder="Искать на Javascript.ru" class="text-input__control" type="text"></div>
-                            <button type="submit" class="sitetoolbar__find">Найти</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- todo: en variant-->
-        <div class="tablet-menu">
-            <div class="tablet-menu__line">
-                <div class="tablet-menu__content">
-                    <select onchange="if(this.value) window.location.href=this.value" class="input-select input-select_small tablet-menu__nav">
-                        <option value="/tutorial" selected="">Учебник</option>
-                        <option value="/courses">Курсы</option>
-                        <option value="https://javascript.ru/forum/">Форум</option>
-                        <option value="https://es5.javascript.ru">ES5</option>
-                        <option value="/quiz">Тесты знаний</option>
-                    </select>
-                </div>
-            </div>
-            <div class="tablet-menu__line">
-                <div class="tablet-menu__content">
-                    <form action="http://learn.javascript.ru/search/" class="tablet-menu-search"><input type="search" name="query" placeholder="Поиск в учебнике" required="" class="tablet-menu-search__input"><button type="submit" name="type" value="articles" class="tablet-menu-search__button">Поиск</button></form>
-                </div>
-            </div>
-            <div class="tablet-menu__line">
-                <div class="tablet-menu__content"><a href="http://learn.javascript.ru/tutorial/map" data-action="tutorial-map" class="map"><span class="map__text">Карта учебника</span></a></div>
-            </div>
-            <!--+e.line--><!--  +e.content--><!--    +b("a").tablet-ebook(href="/ebook")--><!--      +e("span").text Купить учебник--><!--      +e("span").note (EPUB + PDF)-->
-            <div class="tablet-menu__line">
-                <div class="tablet-menu__content">
-                    <div class="share-icons"><span class="share-icons__title">Поделиться</span><a href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_tw"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_fb"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_gp"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_vk"></a></div>
-                </div>
-            </div>
-        </div>
-        <progress data-sticky="" value="1" max="86" data-tooltip="Урок 1 из 86" class="tutorial-progress"></progress>
-    </div>
-    <div class="page page_sidebar_on page_sidebar-animation-on">
-        <div class="page__inner">
-            <!--CODE HEARE-->
-        </div>
-        <div class="page__sidebar sidebar sidebar_sticky-footer" style="top: 64px;">
-            <button data-sidebar-toggle="" class="sidebar__toggle"></button>
-            <div class="sidebar__inner">
-                <div class="sidebar__content">
-                    <div class="sidebar__section">
-                        <h4 class="sidebar__section-title">Раздел</h4>
-                        <nav class="sidebar__navigation">
-                            <ul class="sidebar__navigation-links">
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/getting-started" class="sidebar__link">Введение</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="sidebar__section">
-                        <h4 class="sidebar__section-title">Навигация по уроку</h4>
-                        <nav class="sidebar__navigation">
-                            <ul class="sidebar__navigation-links">
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-javascript" class="sidebar__link">Что такое JavaScript?</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D1%87%D1%82%D0%BE-%D1%83%D0%BC%D0%B5%D0%B5%D1%82-javascript" class="sidebar__link">Что умеет JavaScript?</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D1%87%D1%82%D0%BE-%D0%BD%D0%B5-%D1%83%D0%BC%D0%B5%D0%B5%D1%82-javascript" class="sidebar__link">Что НЕ умеет JavaScript?</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D0%B2-%D1%87%D1%91%D0%BC-%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C-javascript" class="sidebar__link">В чём уникальность JavaScript?</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D1%82%D0%B5%D0%BD%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B8-%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F" class="sidebar__link">Тенденции развития</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D0%B0%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%BD%D1%8B%D0%B5-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8" class="sidebar__link">Альтернативные браузерные технологии</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D1%8F%D0%B7%D1%8B%D0%BA%D0%B8-%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85-javascript" class="sidebar__link">Языки поверх JavaScript</a></li>
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#%D0%B8%D1%82%D0%BE%D0%B3%D0%BE" class="sidebar__link">Итого</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="sidebar__section">
-                        <nav class="sidebar__navigation">
-                            <ul class="sidebar__navigation-links">
-                                <li class="sidebar__navigation-link"><a href="http://learn.javascript.ru/intro#comments" class="sidebar__link">Комментарии</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="sidebar__section">
-                        <div class="sidebar__section-title">Поделиться</div>
-                        <a href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_tw sidebar__share"></a><a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_fb sidebar__share"></a><a href="https://plus.google.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_gp sidebar__share"></a><a href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fintro" class="share share_vk sidebar__share"></a>
-                    </div>
-                    <div class="sidebar__section"><a href="https://github.com/iliakan/javascript-tutorial-ru/tree/master/1-js/1-getting-started/1-intro/article.md" class="sidebar__link">Редактировать на Github</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="page-footer">
-    <div class="page-footer__left">
-        <ul class="page-footer__list">
-            <li class="page-footer__item">©&nbsp;2007—2018&nbsp; Илья Кантор</li>
-            <li class="page-footer__item"><a href="http://learn.javascript.ru/about#contact-us" class="page-footer__link">связаться с нами</a></li>
-            <li class="page-footer__item"><a href="http://learn.javascript.ru/about" class="page-footer__link">о проекте</a></li>
-            <li class="page-footer__item"><a href="http://learn.javascript.ru/agreement" class="page-footer__link">соглашение</a></li>
-            <li class="page-footer__item"><a href="http://slack.javascript.ru/" class="page-footer__slack">slack-чат</a></li>
-        </ul>
-    </div>
-    <div class="page-footer__right">
-        <ul class="page-footer__list">
-            <li class="page-footer__item">powered by <a rel="nofollow" href="http://nodejs.org/" class="page-footer__link">node.js</a>&nbsp;&amp;&nbsp;<a rel="nofollow" href="http://github.com/iliakan/javascript-tutorial-ru" class="page-footer__link">open source</a></li>
-        </ul>
-    </div>
-</div>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="navbar">
+				<a href="images/logo.svg" class="logo"></a>
+				<div class="nav-menu">
+					<nav class="main-menu">
+						<ul class="nav-list">
+							<li class="nav-item">
+								<a href="#">Учебник</a>
+							</li>
+							<li class="nav-item">
+								<a href="#">Курсы</a>
+							</li>
+							<li class="nav-item">
+								<a href="#">Форум</a>
+							</li>
+							<li class="nav-item">
+								<a href="#">ES5</a>
+							</li>
+							<li class="nav-item">
+								<a href="#">Тесты знаний</a>
+							</li>
+							<li class="nav-item">
+								<a href="#">Вакансии</a>
+							</li>
+							<li class="nav-item">
+								<a href="#">Скринкасты</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<section class="content">
+			<div class="main-content">
+				<button class="sidebar-button" id="sidebar-button"></button>
+				<div class="section-inner">
+					
+				</div>
+				<div class="sidebar-wrapper" id="sidebar-wrapper">
+					<div class="sidebar">
+						<nav class="sidebar-menu">
+							<ul class="sidebar-list">
+								<li class="sidebar-item">
+									<a href="#">First task</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#">Second task</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#">Third task</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#">Fourth task</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#">Fifth task</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#">Sixth task</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#">Seventh task</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			
+		</footer>
+	</div>
 </body>
 </html>
