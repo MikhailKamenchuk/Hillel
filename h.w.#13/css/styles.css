@@ -1,19 +1,21 @@
 input[type = 'text']{
   width:20px;
-  margin-top:5px;
 }
 
-input[type = 'submit']{
-  margin-top: 10px;
-}
 table {
   border-collapse: collapse;
 }
+form div{
+	margin: 10px 0;
+}
+
 td {
   border: 1px solid gray;
   padding: 2px 5px;
   text-align: center;
+  font-size: 0;
+  min-width: 20px;
+  height: 15px;
 }
-#for-table{
-	margin-top:15px;
-}
+
+
