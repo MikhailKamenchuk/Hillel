@@ -36,23 +36,5 @@ let table = document.querySelector("#myTable");
 
 let selectedTd;
 
-table.onclick = function(event) {
-    var target = event.target;
 
-    while (target != this) {
-        if (target.tagName == 'TD') {
-            attention(target);
-            return;
-        }
-        target = target.parentNode;
-    }
-};
-
-function attention(node) {
-    if (selectedTd) {
-       return alert("hi");
-    }
-    selectedTd = node;
-   return alert("by");
-};
 

@@ -1,3 +1,4 @@
+
 input[type = 'text']{
   width:20px;
 }
@@ -13,9 +14,29 @@ td {
   border: 1px solid gray;
   padding: 2px 5px;
   text-align: center;
-  font-size: 0;
+  /* font-size: 0; */
   min-width: 20px;
   height: 15px;
 }
+#clock{
+  position: fixed;
+  top:0;
+  right:0;
+  height: 35px;
+  width: 100px;
+  background-color: #c8e1ff;
+  margin-top:10px;
+}
+
+#window-size{
+  position: fixed;
+  top:0;
+  right:100px;
+  width: 100px;
+  height:35px;
+  background-color:#dddddd;
+  margin-top:10px;
+}
+
 
 
