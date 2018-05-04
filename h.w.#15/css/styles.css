@@ -12,6 +12,8 @@ html, body{
   height: 55px;
   border-bottom: 4px solid #e1e0de; 
   flex: 0 0 60px;
+  background-color:white;
+  z-index: 2;
 }
 
 .logo {
@@ -90,7 +92,15 @@ html, body{
 .section-inner{
   padding: 0 150px;  
 }
-
+.slider{
+	display:none;
+	width: 200px;
+	height:200px;
+	background-color: orange;
+}
+.table-area{
+	display:none;
+}
 .article{
   padding: 050px 100px;
 
@@ -135,11 +145,14 @@ html, body{
 .sidebar-wrapper{
   position:fixed;
   left:0;
-  top: 64px;
+  top: 0;
   z-index: 1;
   background-color: #f5f2f0;
   width: 250px;
   height: 100%;
+}
+.sidebar{
+  padding-top:64px;
 }
 
 .sidebar-menu{
@@ -161,5 +174,23 @@ html, body{
   flex: 0 0 60px; 
   border-top:2px solid #dddddd;
 }
+input[type = 'text']{
+  width:20px;
+}
 
+table {
+  border-collapse: collapse;
+}
+form div{
+	margin: 10px 0;
+}
+
+td {
+  border: 1px solid gray;
+  padding: 2px 5px;
+  text-align: center;
+  /* font-size: 0; */
+  min-width: 20px;
+  height: 15px;
+}
 
