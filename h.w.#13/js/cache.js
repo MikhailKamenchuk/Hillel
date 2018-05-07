@@ -1,18 +1,16 @@
 var complexFunction = function(arg1, arg2) { 
   	return arg1 + arg2;
 };
-function cache(){
+function cache(fn){
   let cacheObject = {};
-  console.log(arguments);
-  return (arguments) => {
-    console.log(arguments);
-    if (arguments in cacheObject){
+  return (fn, arguments) => {
+    let result = fn + arguments;
+    if (result in cacheObject){
       console.log('Fetching from cache');
-      return console.log(cacheObject);
-    } else{
+      return cacheObject[result];
+    }else{
       console.log('Calculating result');
-      let result = arguments;
-      cacheObject[arguments] = result;
+      cacheObject[result] = result;
       return result;
     }
   }
@@ -20,4 +18,6 @@ function cache(){
 var cachedFunction = cache(complexFunction);
 cachedFunction('foo', 'bar');
 cachedFunction('foo', 'bar');
+cachedFunction('foo', 'baz');
+cachedFunction('fo', 'baz');
 cachedFunction('foo', 'baz');
