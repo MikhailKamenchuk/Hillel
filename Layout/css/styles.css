@@ -12,6 +12,8 @@ html, body{
   height: 55px;
   border-bottom: 4px solid #e1e0de; 
   flex: 0 0 60px;
+  z-index: 2;
+  background-color: white;
 }
 
 .logo {
@@ -48,38 +50,8 @@ html, body{
   .logo:hover {
     opacity: 0.7; }
 
-.navbar {
-    width: 100%;
-    height: 100%;
-}
-
-.nav-menu {
-  display:block;
-  float:left;
-}
-.nav-list {
-  padding-top:20px;
-
-}
-.nav-item {
-  display: inline-block;
-  margin-right:17px;
-}
-
-.nav-item a{
-  text-decoration: none;
-  color:#696664;;
-}
-.nav-item a:hover, .nav-item a:active{
-  color:#b20600
-}
-.nav-item:last-child{
-  margin-right: 0;
-}
-
 .content {
   flex: 1 1 auto;
-  height:100%;
   width:100%;
 }
 
@@ -88,18 +60,24 @@ html, body{
   
 }
 .section-inner{
-  padding: 0 150px;  
+  padding: 0 110px;  
 }
 
-.article{
-  padding: 050px 100px;
+.inner-wrap{
+    padding: 20px 0;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
 
+.inner-wrap p{
+	font-size: 24px;
 }
 
 .sidebar-button{
-  position:relative;
-  top:20px;
-  left:20px;
+  position: fixed;
+  top: 84px;
+  left: 267px;
   width: 30px;
   height: 25px;
   border: none;
@@ -135,7 +113,8 @@ html, body{
 .sidebar-wrapper{
   position:fixed;
   left:0;
-  top: 64px;
+  top: 0;
+  padding-top:64px;
   z-index: 1;
   background-color: #f5f2f0;
   width: 250px;
@@ -159,7 +138,10 @@ html, body{
 }
 .footer {
   flex: 0 0 60px; 
+  height:60px;
   border-top:2px solid #dddddd;
+  z-index: 2;
+  background-color: white;
 }
 
 
