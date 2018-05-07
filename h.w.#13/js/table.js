@@ -20,7 +20,7 @@ function createTable(){
         container.removeChild(container.firstChild);
     }
     container.appendChild(table);
-    table.onclick = (event) => {
+    table.onclick = function(event) {
  	 let cell = event.target;
  	 if (cell.tagName.toLowerCase() != 'td')
  	   return;
