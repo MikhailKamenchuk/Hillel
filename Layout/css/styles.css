@@ -4,14 +4,13 @@ html, body{
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100%; 
-  align-content: stretch;}
+  height: 100%; }
 
 .header {
   position: relative;
-  height: 55px;
+  height: 60px;
   border-bottom: 4px solid #e1e0de; 
-  flex: 0 0 60px;
+  flex: 0 0 auto;
   z-index: 2;
   background-color: white;
 }
@@ -51,7 +50,7 @@ html, body{
     opacity: 0.7; }
 
 .content {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   width:100%;
 }
 
@@ -76,34 +75,27 @@ html, body{
 
 .sidebar-button{
   position: fixed;
-  top: 84px;
-  left: 267px;
-  width: 30px;
-  height: 25px;
-  border: none;
-  outline: 0
+    top: 78px;
+    left: 17px;
+    width: 30px;
+    height: 27px;
+    border: none;
+    border-top: 5px solid #dddddd;
+    border-bottom: 5px solid #dddddd;
+    outline: 0;
+    z-index: 3;
+    background-color: transparent;
 }
 
 .sidebar-button:before{
-  content:"";
-  display:block;
-  position:absolute;
-  top: 5px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
   left: 0px;
-  width:30px;
-  height:5px;
-  background-color: white;
-}
-
-.sidebar-button:after{
-  content:"";
-  display:block;
-  position:absolute;
-  top: 15px;
-  left: 0px;
-  width:30px;
-  height:5px;
-  background-color: white;
+  width: 30px;
+  height: 5px;
+  background-color: #dddddd;
 }
 
 .sidebar-button:active{
@@ -124,6 +116,8 @@ html, body{
 .sidebar-menu{
     margin-left: 35px;
     margin-top: 36px;
+	padding: 0 30px;
+    overflow: hidden;
 }
 .sidebar-item{
   padding:10px 0;
@@ -136,12 +130,15 @@ html, body{
 .sidebar-item a:hover, .sidebar-item a:active{
   color:#b20600
 }
-.footer {
-  flex: 0 0 60px; 
+.footer { 
   height:60px;
   border-top:2px solid #dddddd;
   z-index: 2;
   background-color: white;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
 }
 
 
