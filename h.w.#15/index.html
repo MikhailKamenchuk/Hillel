@@ -1,69 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
 	<script src="./js/script.js" async="index.html"></script>
+	<script src="./js/timer.js" async="index.html"></script>
 	<script src="./js/table.js" async="index.html"></script>
-	<title>HW 15</title>
+	<script src="./js/slider.js" async="index.html"></script>
+	<title>h.w.#15</title>
 </head>
 <body>
 	<div class="wrapper">
 		<header class="header">
 			<div class="navbar">
 				<a href="images/logo.svg" class="logo"></a>
-				<div class="nav-menu">
-					<nav class="main-menu">
-						<ul class="nav-list">
-							<li class="nav-item">
-								<a href="#">Учебник</a>
-							</li>
-							<li class="nav-item">
-								<a href="#">Курсы</a>
-							</li>
-							<li class="nav-item">
-								<a href="#">Форум</a>
-							</li>
-							<li class="nav-item">
-								<a href="#">ES5</a>
-							</li>
-							<li class="nav-item">
-								<a href="#">Тесты знаний</a>
-							</li>
-							<li class="nav-item">
-								<a href="#">Вакансии</a>
-							</li>
-							<li class="nav-item">
-								<a href="#">Скринкасты</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
 			</div>
 		</header>
 		<section class="content">
 			<div class="main-content">
 				<button class="sidebar-button" id="sidebar-button"></button>
 				<div class="section-inner">
-					<div class="slider"></div>
-					<div class="table-area">
-						<form action="#">
-						<div>
-							<lable for="col">columns</lable>
-							<input type="text" id="col">
-						</div>
-						<div>
-							<lable for="row">rows</lable>
-							<input type="text" id="row">
-						</div>
-						<div>
-							<input id="submit" type="submit" value='Create new table'>
-						</div>
-						</form>
-						<div id="for-table"></div>
+					<div class="inner-wrap">	
+						<div class="section-inner">	
+								<div id="slider">
+									<figure class="slide">
+										<img src="https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699__340.jpg"><div class="description">Seashells</div>
+									</figure>
+									<figure class="slide">
+										<img src="https://cdn.pixabay.com/photo/2017/06/24/23/03/railway-2439189__340.jpg"><div class="description">Beatiful beach</div>
+									</figure>
+									<figure class="slide">
+										<img src="https://cdn.pixabay.com/photo/2017/06/30/21/28/sunset-2459855__340.jpg"><div class="description">Wonderful sunrice</div>
+									</figure>
+									<figure class="slide">
+										<img src="https://cdn.pixabay.com/photo/2017/06/24/23/41/beer-2439237__340.jpg"><div class="description">Quay</div>
+									</figure>
+									<figure class="slide">
+										<img src="https://cdn.pixabay.com/photo/2016/03/09/15/29/eagle-1246681__340.jpg"><div class="description">Amazing sunrice on the lake</div>
+									</figure>
+								</div>
+							<div class="table-area">
+								<form action="#">
+									<div>
+										<lable for="col">columns</lable>
+										<input type="text" id="col">
+									</div>
+									<div>
+										<lable for="row">rows</lable>
+										<input type="text" id="row">
+									</div>
+									<div>
+										<input id="submit" type="submit" value='Create new table'>
+									</div>
+								</form>
+								<div id="for-table"></div>
+							</div>
+						</div>	
 					</div>
 				</div>
 				<div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -83,7 +78,7 @@
 			</div>
 		</section>
 		<footer class="footer">
-			<a href="#">footer</a>
+			<div id="my-timer">00:00:00</div>
 		</footer>
 	</div>
 </body>
