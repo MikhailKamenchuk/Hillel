@@ -13,7 +13,14 @@ function Slidebox(name){
 }
 
 var firstSlider = new Slidebox('first-slider');
+// firstSlider.addEventListener('mouseover', function(){
+	// let getSlider = document.getElementById('first-slider');
+	// getSlider.querySelector('.description').style.display = "block";
+	
+// })
 firstSlider();
+
 var anotherSlider = new Slidebox('another-slider');
 anotherSlider();
+
 
