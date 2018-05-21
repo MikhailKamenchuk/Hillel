@@ -27,50 +27,48 @@ function showSecondProgressbar() {
 };
 addingSecondProgressbar.addEventListener('click', showSecondProgressbar);
 
+//for promises
 
-function MoveFirst(){
-	let elem = document.querySelector('.myFirstBar');
-	let width = 1;
-	let timerId = setInterval(frame, 20);
-	function frame(){
-		if (width >= 100){
-			clearInterval(timerId);
-		} else {
-			width++;
-			elem.style.width = width +'%';
-		}
-	}
+let firstPromiseButton = firstProgressbar.querySelector('.btn-for-promise')
+let firstProgress = firstProgressbar.querySelector('.my-bar');
+let firstTextInPromise = firstProgressbar.querySelectorAll('.content-in-progressbar');
+let firstImagesInPromise = firstProgressbar.querySelectorAll('.for-image');
+let firstHeadsInPromise = firstProgressbar.querySelectorAll('.article-ptomise');
 
+function hideProgress(){
+	firstProgress.style.width = "0";
 }
-function MoveSecond(){
-	let elem = document.querySelector('.mySecondBar');
-	let width = 1;
-	let timerId = setInterval(frame, 20);
-	function frame(){
-		if (width >= 100){
-			clearInterval(timerId);
-		} else {
-			width++;
-			elem.style.width = width +'%';
-		}
+
+function hideImages(){
+	for(let i = 0; i < firstImagesInPromise.length; i++){
+		firstImagesInPromise[i].style.width = "0";
+		firstImagesInPromise[i].style.height = "0";
 	}
 }
 
-addingFirstProgressbar.addEventListener('click', MoveFirst)
+function hideText(){
+	for(let i = 0; i < firstTextInPromise.length; i++){
+		firstTextInPromise[i].style.width = "0";
+		firstTextInPromise[i].style.padding = "0";
+		firstTextInPromise[i].style.height = "0";
+	}
+}
 
-// let promise = new Promise((resolve, reject) => {
-//    setTimeout(resolve(), 1000);
-// });
+function hideHeders(){
+	for(let i = 0; i < firstHeadsInPromise.length; i++){
+		firstHeadsInPromise[i].style.height = "0";
+		firstHeadsInPromise[i].style.width = "0";
+	}
+}
 
-// promise
-// .then (
-// 	result => {
-// 		// let elem = document.querySelector('.for-image');
-// 		// let go = function (){
-// 		// 	elem.style.height = '0px'
-// 		// }
-// 		// this.addEventListener('click', go)
-//         console.log("dqwdqwdqwdqwdqwd")
-// 	})
+let promise1 = new Promise((resolve, reject) => {
+	resolve(firstPromiseButton.addEventListener('click', hideProgress))
+});
+promise1.then(function(){
+	return Promise.resolve(firstProgress.addEventListener('transitionend', hideImages))
+}).then(function(){
+	return Promise.resolve(firstImagesInPromise[0].addEventListener('transitionend', hideText))
+}).then(function(){
+	return Promise.resolve(firstTextInPromise[0].addEventListener('transitionend', hideHeders))
+})
 
-addingSecondProgressbar.addEventListener('click', MoveSecond);

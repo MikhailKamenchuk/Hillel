@@ -51,6 +51,18 @@ html, body{
   .logo:hover {
     opacity: 0.7; }
 
+input[type = "text"].weather {
+    width: 150px;
+    margin-top: 16px;
+    outline: none;
+    border-radius: 5px;
+    color: #696664;
+    float: left;
+    padding: 4px;
+}
+
+
+
 .content {
   flex: 1 0 auto;
   width:100%;
@@ -61,12 +73,13 @@ html, body{
   
 }
 .section-inner{
+  padding: 0 110px;
   overflow: auto;
-  margin: 64px 0; 
-  padding: 0 10px; 
+  margin: 50px 0;  
 }
 
 .inner-wrap{
+    padding-bottom: 20px;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
@@ -76,83 +89,39 @@ html, body{
 	font-size: 24px;
 }
 
-.first-progressbar{
+
+#slider{
+	display:none;
+	width: 200px;
+	height:260px;
+	position: relative;
+}
+#another-slider{
+  position:fixed;
+  bottom:0;
+  left:0;
+}
+.slide{
+  position: absolute;
   display: none;
-  min-height: 200px;
 }
-.second-progressbar{
-  display: none;
-  min-height: 200px;
+.active{
+  display: block;
 }
-
-.my-first-progress, .my-second-progress{
-	position:relative;
-	width:100%;
-	height:10px;
-	background-color:#ddd;
+figure img {
+    height: 200px;
+    width: auto;
 }
-.my-bar{
-	position:absolute;
-	width:100%;
-	height:100%;
-	background-color:#4CAF50;
-  transition: width 2s;
+figure {
+    width: 400px;
+    background-color: #dddd;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto 5px auto;
+    color: #000;
 }
-
-.btn-for-promise{
-  width: 100%;
-    height: 26px;
-    margin: 10px 0;
-    border-radius: 5px;
-    outline: none;
-    cursor:pointer;
-}
-
-.article-ptomise{
-  width:100%;
-  height: 180px;
-  overflow: hidden;
-  transition: width 2s, height 2s;
-}
-.head{
-  width: 100%;
-  height: 25px;
-  font-size: 25px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  transition: all 2s;
-  float: left;
-  border:2px solid black;
-  box-sizing: border-box;
-}
-.content-in-progressbar{
-	width:100%;
-  height: 120px;
-	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
-	border-radius:5px;
-	box-sizing: border-box;
-  padding:5px;
-  overflow: hidden;
-  transition:all 2s;
-}
-
-.text-in-progressbar{
-  padding-left:5px;
-  overflow: hidden;
-}
-
-.content-in-progressbar div{
-	float:left;
-}
-
-.for-image{
-	width:100px;
-	height: 100px;
-  margin:3px;
-	background-image: url(../images/gora.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: all 2s;
+.table-area{
+	display:none;
 }
 
 .sidebar-button{
@@ -221,6 +190,33 @@ html, body{
   position:fixed;
   bottom:0;
   left:0;
+}
+#my-timer{
+	font-size: 30px;
+    float: right;
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    padding: 10px 0;
+}
+
+input[type = 'text']{
+  width:20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+form div{
+	margin: 10px 0;
+}
+
+td {
+  border: 1px solid gray;
+  padding: 2px 5px;
+  text-align: center;
+  min-width: 20px;
+  height: 15px;
 }
 
 
