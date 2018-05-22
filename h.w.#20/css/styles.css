@@ -53,6 +53,7 @@ html, body{
 
 input[type = "text"].weather {
     width: 150px;
+    height: 16px;
     margin-top: 16px;
     outline: none;
     border-radius: 5px;
@@ -60,7 +61,83 @@ input[type = "text"].weather {
     float: left;
     padding: 4px;
 }
+.submit-weather{
+  float: left;
+    width: 36px;
+    height: 27px;
+    padding: 4px;
+    border-radius: 5px;
+    color: #696664;
+    margin-top: 16px;
+    margin-left: 9px;
+    background-color: ghostwhite;
+    cursor: pointer;
+    outline: none;
+}
 
+.weather-app {
+    margin: 1px 10px;
+    float: left;
+    width: 300px;
+    height: 54px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #888888;
+    overflow: hidden;
+    text-align: center;
+}
+
+.left {
+    float: left;
+    background: #f5f2f0;
+    padding: 5px;
+    width: 160px;
+    height: 100%;
+    box-sizing: border-box;
+    color: #696664;
+}
+
+.temperature {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 150px;
+}
+
+.location {
+    font-size: 18px;
+    width:150px;
+}
+
+.right {
+    float: right;
+    width:140px;
+    height:100%;
+}
+
+.top {
+    height: 100%;
+    width: 50%;
+    float: left;
+    background: #cec;
+}
+
+
+
+.bottom {
+    height: 100%;
+    background: #669999;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.humidity {
+    padding: 2px;
+}
+
+.wind {
+}
 
 
 .content {

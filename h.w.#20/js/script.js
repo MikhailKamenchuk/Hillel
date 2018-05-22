@@ -26,9 +26,3 @@ function showBlockTableArea() {
 addingTable.addEventListener('click', showBlockTableArea);
 
 
-/////autocomlete
-let inputWeather = document.querySelector('.weather');
-function initialize() {
-      let autocomplete = new google.maps.places.Autocomplete(inputWeather);
-   }
-google.maps.event.addDomListener(window, 'load', initialize);

@@ -11,7 +11,7 @@
 	<script src="./js/timer.js" async="index.html"></script>
 	<script src="./js/table.js" async="index.html"></script>
 	<script src="./js/slider.js" async="index.html"></script>
-
+	<script src="./js/weather.js" async="index.html"></script>
 	<title>h.w.#20</title>
 </head>
 <body>
@@ -22,6 +22,29 @@
 			</div>
 			<div class="for-weather">
 				<input class="weather" type="text" placeholder="Select city">
+				<button class="submit-weather">Get</button>
+				<div class="weather-app">
+			      <div class="left">
+					<div class="temperature"><span id="temperature">0</span>&deg;</div> 
+					<div class="location"><span id="location">Unknown</span></div>
+     			  </div>	
+    			  <div class="right">
+					<div class="top">
+	 					 <img id="icon" width="55px" src="images/codes/200.png" />
+					</div>
+
+	 				<div class="bottom">
+	   					<div class="humidity">
+	    					<img src="images/humidity.png" height="16px" />
+	    					<span id="humidity">0</span>%
+	  		     		</div>
+	                    <div class="wind">
+	    					<span id="wind">0</span> kmph </br><span id="direction">N</span>
+	  					</div>
+	  
+					</div>
+    		  	  </div>
+			    </div>
 			</div>
 		</header>
 		<section class="content">
