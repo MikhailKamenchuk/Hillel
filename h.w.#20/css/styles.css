@@ -15,6 +15,20 @@ html, body{
   border-bottom: 4px solid #e1e0de; 
   z-index: 2;
   background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.for-weather{
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.navbar{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .logo {
@@ -60,6 +74,9 @@ input[type = "text"].weather {
     color: #696664;
     float: left;
     padding: 4px;
+    display: inline-block;
+    vertical-align: middle;
+
 }
 .submit-weather{
   float: left;
@@ -73,6 +90,8 @@ input[type = "text"].weather {
     background-color: ghostwhite;
     cursor: pointer;
     outline: none;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .weather-app {
@@ -85,6 +104,8 @@ input[type = "text"].weather {
     box-shadow: 1px 1px 3px #888888;
     overflow: hidden;
     text-align: center;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .left {
