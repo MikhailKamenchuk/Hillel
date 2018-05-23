@@ -4,13 +4,16 @@ function initialize() {
    }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-var APPID = "77e6549a0d6f421bbc4caa4dec3beb20";
-var temp;
-var loc;
-var icon;
-var humidity;
-var wind;
-var direction;
+
+
+let APPID = "77e6549a0d6f421bbc4caa4dec3beb20";
+let temp;
+let loc;
+let icon;
+let humidity;
+let wind;
+let direction;
+let city;
 
 document.querySelector('.submit-weather').addEventListener('click', getWeather);
 
@@ -30,31 +33,31 @@ function getWeather() {
     humidity = document.getElementById("humidity");
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
-	var city = inputWeather.value.substring(0 , inputWeather.value.indexOf(','));
-	updateByCity(city);
+    city = inputWeather.value.substring(0 , inputWeather.value.indexOf(','));
+    updateByCity(city);
 }
 
 function updateByCity(city){
-    var url = "http://api.openweathermap.org/data/2.5/weather?" +
-	"q=" + city +
-	"&APPID=" + APPID;
+    let url = "http://api.openweathermap.org/data/2.5/weather?" +
+    "q=" + city +
+    "&APPID=" + APPID;
     sendRequest(url);
 }
 
 function sendRequest(url){
-    var xmlhttp = new XMLHttpRequest();
+    let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var data = JSON.parse(xmlhttp.responseText);
-	    var weather = {};
-	    weather.code = data.weather[0].id;
-	    weather.humidity = data.main.humidity;
-	    weather.wind = mph2kmph(data.wind.speed);
-	    weather.direction = degreesToDirection(data.wind.deg)
-	    weather.location = data.name;
-	    weather.temp = K2C(data.main.temp);		
-	    update(weather);
-	}
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        let data = JSON.parse(xmlhttp.responseText);
+        let weather = {};
+        weather.code = data.weather[0].id;
+        weather.humidity = data.main.humidity;
+        weather.wind = mph2kmph(data.wind.speed);
+        weather.direction = degreesToDirection(data.wind.deg)
+        weather.location = data.name;
+        weather.temp = K2C(data.main.temp);     
+        update(weather);
+    }
     };
 
     xmlhttp.open("GET", url, true);
@@ -62,18 +65,16 @@ function sendRequest(url){
 }
 
 function degreesToDirection(degrees){
-    var range = 360/16;
-    var low = 360 - range/2;
-    var high = (low + range) % 360;
-    var angles = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    let range = 360/16;
+    let low = 360 - range/2;
+    let high = (low + range) % 360;
+    let angles = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
     for( i in angles ) {
-	if(degrees >= low && degrees < high){
-	    console.log(angles[i]);
-	    return angles[i];
-	    console.log("derp");
-	}
-	low = (low + range) % 360;
-	high = (high + range) % 360;
+    if(degrees >= low && degrees < high){
+        return angles[i];
+    }
+    low = (low + range) % 360;
+    high = (high + range) % 360;
     }
     return "N"; 
 }

@@ -40,14 +40,18 @@ function hideProgress(){
 }
 
 function hideImages(){
+	
 	for(let i = 0; i < firstImagesInPromise.length; i++){
+		// firstImagesInPromise[i].stopPropagation();
 		firstImagesInPromise[i].style.width = "0";
 		firstImagesInPromise[i].style.height = "0";
 	}
 }
 
 function hideText(){
+	
 	for(let i = 0; i < firstTextInPromise.length; i++){
+		// firstTextInPromise[i].stopPropagation();
 		firstTextInPromise[i].style.width = "0";
 		firstTextInPromise[i].style.padding = "0";
 		firstTextInPromise[i].style.height = "0";
@@ -55,7 +59,9 @@ function hideText(){
 }
 
 function hideHeders(){
+	
 	for(let i = 0; i < firstHeadsInPromise.length; i++){
+		// firstHeadsInPromise[i].stopPropagation();
 		firstHeadsInPromise[i].style.height = "0";
 		firstHeadsInPromise[i].style.width = "0";
 	}
@@ -65,10 +71,19 @@ let promise1 = new Promise((resolve, reject) => {
 	resolve(firstPromiseButton.addEventListener('click', hideProgress))
 });
 promise1.then(function(){
-	return Promise.resolve(firstProgress.addEventListener('transitionend', hideImages))
+	return Promise.resolve(firstProgress.addEventListener('transitionend', function(event){
+		event.stopPropagation();
+		hideImages();
+	}))
 }).then(function(){
-	return Promise.resolve(firstImagesInPromise[0].addEventListener('transitionend', hideText))
+	return Promise.resolve(firstImagesInPromise[0].addEventListener('transitionend', function(event){
+		event.stopPropagation();
+		hideText();
+	}))
 }).then(function(){
-	return Promise.resolve(firstTextInPromise[0].addEventListener('transitionend', hideHeders))
+	return Promise.resolve(firstTextInPromise[0].addEventListener('transitionend', function(event){
+		event.stopPropagation();
+		hideHeders();
+	}))
 })
 
