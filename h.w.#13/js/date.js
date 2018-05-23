@@ -1,8 +1,64 @@
-let newDiv = document.createElement('div');
-newDiv.id = 'clock';
-document.body.appendChild(newDiv);
+let header = document.querySelector('.header');
 
-setInterval(function(){
-  let d = new Date();
-  document.getElementById('clock').innerHTML = d.toLocaleString();
-},1000);
+let newDiv = document.createElement('div');
+newDiv.className = "clock";
+header.appendChild(newDiv);
+let colon = document.createElement('span');
+colon.innerHTML = " : ";
+let hourSpan = document.createElement('span');
+hourSpan.id = "hr";
+hourSpan.innerHTML = "00";
+newDiv.appendChild(hourSpan);
+newDiv.appendChild(colon);
+newDiv.appendChild(colon);
+let minSpan = document.createElement('span');
+minSpan.id = "min";
+minSpan.innerHTML = "00";
+newDiv.appendChild(minSpan);
+newDiv.appendChild(colon.cloneNode(true));
+let secSpan = document.createElement('span');
+secSpan.id = "sec";
+secSpan.innerHTML = "00";
+newDiv.appendChild(secSpan);
+
+let d;
+let h;
+let m;
+let s;
+let animate;
+
+function init(){
+	d = new Date();
+	h = d.getHours();
+	m = d.getMinutes();
+	s = d.getSeconds();
+	animate = setTimeout(init, 1000)
+	clock();
+
+};
+
+function clock(){
+	s++;
+	if (s == 60){
+		s = 0;
+		m++;
+	} else if (m == 60){
+		m = 0;
+		h++;
+	} else if(h == 24){
+		h = 0;
+	}
+	go('sec', s);
+	go('min', m);
+	go('hr', h);
+}
+
+function go(id, val){
+	if (val < 10){
+		val = '0' + val;
+	}
+	document.getElementById(id).innerHTML = val;
+}
+
+window.onload = init;
+

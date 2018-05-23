@@ -1,5 +1,6 @@
 let submit = document.querySelector("#submit");
 submit.addEventListener('click', createTable);
+let flag = false; 
 
 function createTable(){
     let col = document.querySelector("#col").value;
@@ -8,6 +9,7 @@ function createTable(){
     table.id = "myTable";
     let container = document.querySelector("#for-table");
     
+
     for (let i = 0; i < row; i++){
      let tr = document.createElement("tr");
      for (let j = 0; j < col; j++){
@@ -16,10 +18,13 @@ function createTable(){
      }
      table.appendChild(tr);
     }
-    if(container.firstChild) {
-        container.removeChild(container.firstChild);
+    if (!flag){
+        container.appendChild(table);
+        flag = true;
+    } else{
+        container.replaceChild(container.appendChild(table), container.firstChild)
     }
-    container.appendChild(table);
+    
     table.onclick = function(event) {
  	 let cell = event.target;
  	 if (cell.tagName.toLowerCase() != 'td')

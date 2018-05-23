@@ -9,5 +9,5 @@ function showSize(){
 function delay(){
   setTimeout(showSize, 2000);
 };
-
+showSize();
 window.addEventListener('resize', delay);
