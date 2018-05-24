@@ -78,23 +78,24 @@ html, body{
 }
 
 
-#first-slider{
+#first-slider, #another-slider{
 	display:none;
-	width: 200px;
-	height:260px;
+	width: 430px;
+  min-height: 250px;
 	position: relative;
+  margin-bottom: 20px;
 }
-#another-slider{
+/*#another-slider{
 	display:none;
-	width: 200px;
-	height:260px;
+	width: 430px;
+  min-height: 250px;
 	position:relative;
-}
+}*/
 .slide{
   position: absolute;
   display: none;
 }
-.active{
+.show{
   display: block;
 }
 figure img {
@@ -103,9 +104,11 @@ figure img {
 }
 .description{
 	display:none;
+  color: #696664;
 }
 figure {
     width: 400px;
+    height:215px;
     background-color: #dddd;
     text-align: center;
     padding: 15px;
