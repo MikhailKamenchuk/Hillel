@@ -29,31 +29,35 @@ function cakes(recipe, available){
     console.log(amount);
     return Math.min(...amount);
 }
-alert(cakes(recipeProduct, availableIngredients));
+console.log(cakes(recipeProduct, availableIngredients));
 
 //Функция проверки: "Все ли могут купить билеты?"
-let personsQueue = [100, 25, 25, 25, 50];
+let personsQueue = [25,25,50,100,25,50,25,50,100];
 
-function ticket(array){
-  let result;
-  let cashInCashbox = 0;
-  let i;
-  
-  for (i = 0; i < array.length; i++){ 
-    console.log(cashInCashbox);    
-    if (array[i] === 25) {
-      cashInCashbox += array[i];
-    } else if (array[i] === 50 && array[0] !== 50) {
-      cashInCashbox += 25;
-    } else {
-      cashInCashbox -= 75;
+function ticket(queue){
+  let result = 'YES';
+  let cashInCashbox = [];
+  let ticketPrice = 25;
+  let change;
+  for (let i = 0; i < queue.length; i++){  
+    if (queue[i] == ticketPrice) {
+      cashInCashbox[i] = queue[i];
+    } else if(queue[i] == 50){
+       if(cashInCashbox.indexOf(ticketPrice) in cashInCashbox) {
+         cashInCashbox[i] = queue[i];
+         delete cashInCashbox[cashInCashbox.indexOf(ticketPrice)];
+       }else{
+         result = 'NO'
+       }
+    } else if (queue[i] == 100){
+      if(cashInCashbox.indexOf(ticketPrice) in cashInCashbox && cashInCashbox.indexOf(50) in cashInCashbox) {
+         cashInCashbox[i] = queue[i];
+         delete cashInCashbox[cashInCashbox.indexOf(ticketPrice && 50)];
+       }else{
+         result = 'NO'
+       }
     }
-    console.log(cashInCashbox);
-    (cashInCashbox >= 0)
-      ? result = 'YES'
-      : result = 'NO';
   }
   return result;
 }
-alert(ticket(personsQueue));
-// я думаю, что решение ужасное и не правильное
+console.log(ticket(personsQueue));
