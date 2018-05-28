@@ -1,8 +1,11 @@
-function Slidebox(parent, forItems){
+function Slidebox(parent){
   this.container = document.querySelector(parent);
-  let items = document.querySelectorAll(forItems);
+  let items = this.container.getElementsByTagName('figure');
   let counter = 0; 
   let timerId;
+  let controlItems = document.querySelectorAll('.controls-item a');
+  this.arrows = document.querySelector('.arrows');
+  this.control = document.querySelector('.controls')
   this.currentElem = null;
   this.go = function(){
         items[counter].classList.remove('show');
@@ -16,11 +19,29 @@ function Slidebox(parent, forItems){
   this.stop = function (){
     clearTimeout(timerId);
   }
+
+  this.moveByArrows = function(){
+    items[counter].classList.remove('show');
+    controlItems[counter].classList.remove('controls-active');     
+    counter += +event.target.getAttribute('data-direct');
+    counter = counter < 0 ? items.length - 1 : counter == items.length ? 0 : counter;
+    items[counter].classList.add('show');
+    controlItems[counter].classList.add('controls-active');
+  }
+
+  this.moveBySwitches = function(elem){
+    items[counter].classList.remove('show');
+    controlItems[counter].classList.remove('controls-active');
+    counter = elem.innerHTML - 1;
+    items[counter].classList.add('show');
+    controlItems[counter].classList.add('controls-active');
+  }
    
 }
 
 
-var firstSlider = new Slidebox('#first-slider', '#first-slider figure');
+var firstSlider = new Slidebox('#first-slider');
+var anotherSlider = new Slidebox('#another-slider');
 window.addEventListener('load', firstSlider.start());
 
 firstSlider.container.onmouseover = function(event){
@@ -52,7 +73,15 @@ firstSlider.container.onmouseout = function(event){
   firstSlider.currentElem = null;
 }
 
-var anotherSlider = new Slidebox('#another-slider', '#another-slider figure');
-window.addEventListener('load', anotherSlider.start());
+anotherSlider.arrows.addEventListener('click', function(event) {
+    if (!event.target.hasAttribute('data-direct')) return;
+    anotherSlider.moveByArrows();
+});
+
+anotherSlider.control.addEventListener('click', function(event) {
+  let target = event.target;
+  if (target.tagName != 'A') return;
+  anotherSlider.moveBySwitches(target);
+})
 
 

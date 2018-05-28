@@ -33,7 +33,7 @@ let firstPromiseButton = firstProgressbar.querySelector('.btn-for-promise')
 let firstProgress = firstProgressbar.querySelector('.my-bar');
 let firstTextInPromise = firstProgressbar.querySelectorAll('.content-in-progressbar');
 let firstImagesInPromise = firstProgressbar.querySelectorAll('.for-image');
-let firstHeadsInPromise = firstProgressbar.querySelectorAll('.article-ptomise');
+let firstHeadsInPromise = firstProgressbar.querySelectorAll('.article-promise');
 
 function hideProgress(){
 	firstProgress.style.width = "0";

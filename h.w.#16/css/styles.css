@@ -85,12 +85,9 @@ html, body{
 	position: relative;
   margin-bottom: 20px;
 }
-/*#another-slider{
-	display:none;
-	width: 430px;
-  min-height: 250px;
+#another-slider{
 	position:relative;
-}*/
+}
 .slide{
   position: absolute;
   display: none;
@@ -115,6 +112,67 @@ figure {
     margin: 0 auto 5px auto;
     color: #000;
 }
+
+.arrows {
+    width: 430px;
+    margin: 0 auto;
+  position:absolute;
+  top:100px;
+  left:0;
+}
+ 
+.arrows span {
+    font-size: 1.5em;
+    cursor: pointer;
+  color:#696664;
+  margin:0 10px;
+}
+
+.arrows span:last-child {
+    float: right;
+}
+
+.controls{
+    width: 100%;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    z-index: 1;
+}
+
+.controls-wrapper{
+    display: inline-block;
+    height: 11px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.controls-item{
+    display: inline-block;
+    margin: 0 4px;
+    width: 11px;
+    height: 11px;
+}
+
+.controls-item a{
+    display: block;
+    width: 7px;
+    height: 7px;
+    background-color: transparent;
+    border: 2px solid #696664;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    text-indent: -9999px;
+}
+
+.controls-item a.controls-active{
+  background-color: #696664;
+}
+
 
 .sidebar-button{
   position: fixed;
