@@ -3,7 +3,7 @@ function Slidebox(parent){
   let items = this.container.getElementsByTagName('figure');
   let counter = 0; 
   let timerId;
-  let controlItems = document.querySelectorAll('.controls-item a');
+  let controlItems = document.querySelectorAll('.controls-item button');
   this.arrows = document.querySelector('.arrows');
   this.control = document.querySelector('.controls')
   this.currentElem = null;
@@ -80,7 +80,7 @@ anotherSlider.arrows.addEventListener('click', function(event) {
 
 anotherSlider.control.addEventListener('click', function(event) {
   let target = event.target;
-  if (target.tagName != 'A') return;
+  if (target.tagName != 'BUTTON') return;
   anotherSlider.moveBySwitches(target);
 })
 

@@ -157,10 +157,11 @@ figure {
     height: 11px;
 }
 
-.controls-item a{
+.controls-item button{
     display: block;
-    width: 7px;
-    height: 7px;
+    width: 11px;
+    height: 11px;
+    padding:0;
     background-color: transparent;
     border: 2px solid #696664;
     border-radius: 50%;
@@ -169,7 +170,7 @@ figure {
     text-indent: -9999px;
 }
 
-.controls-item a.controls-active{
+.controls-item button.controls-active{
   background-color: #696664;
 }
 
