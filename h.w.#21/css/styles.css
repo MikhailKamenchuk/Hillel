@@ -68,24 +68,20 @@ html, body{
 input[type = "text"].weather {
     width: 150px;
     height: 16px;
-    margin-top: 16px;
     outline: none;
     border-radius: 5px;
     color: #696664;
-    float: left;
     padding: 4px;
     display: inline-block;
     vertical-align: middle;
 
 }
 .submit-weather{
-  float: left;
     width: 36px;
     height: 27px;
     padding: 4px;
     border-radius: 5px;
     color: #696664;
-    margin-top: 16px;
     margin-left: 9px;
     background-color: ghostwhite;
     cursor: pointer;
@@ -96,7 +92,6 @@ input[type = "text"].weather {
 
 .weather-app {
     margin: 1px 10px;
-    float: left;
     width: 300px;
     height: 54px;
     border: 1px solid #ddd;
@@ -160,6 +155,22 @@ input[type = "text"].weather {
 .wind {
 }
 
+.clock{
+    position: fixed;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 110px;
+    padding-top: 20px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #696664;
+    background-color: white;
+    z-index: 99;
+}
 
 .content {
   flex: 1 0 auto;
@@ -171,9 +182,9 @@ input[type = "text"].weather {
   
 }
 .section-inner{
-  padding: 0 110px;
+  padding: 15px 110px;
   overflow: auto;
-  margin: 50px 0;  
+  margin: 64px 0;  
 }
 
 .inner-wrap{
@@ -187,39 +198,181 @@ input[type = "text"].weather {
 	font-size: 24px;
 }
 
-
 #slider{
-	display:none;
-	width: 200px;
-	height:260px;
-	position: relative;
+  display:none;
+}
+
+#first-slider, #another-slider{
+  display:none;
+  width: 430px;
+  min-height: 250px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 #another-slider{
-  position:fixed;
-  bottom:0;
-  left:0;
+  position:relative;
 }
 .slide{
   position: absolute;
   display: none;
 }
-.active{
+.show{
   display: block;
 }
 figure img {
     height: 200px;
     width: auto;
 }
+.description{
+  display:none;
+  color: #696664;
+}
 figure {
     width: 400px;
+    height:215px;
     background-color: #dddd;
     text-align: center;
     padding: 15px;
     margin: 0 auto 5px auto;
     color: #000;
 }
+
+.arrows {
+    width: 430px;
+    margin: 0 auto;
+  position:absolute;
+  top:100px;
+  left:0;
+}
+ 
+.arrows span {
+    font-size: 1.5em;
+    cursor: pointer;
+  color:#696664;
+  margin:0 10px;
+}
+
+.arrows span:last-child {
+    float: right;
+}
+
+.controls{
+    width: 100%;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    z-index: 1;
+}
+
+.controls-wrapper{
+    display: inline-block;
+    height: 11px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.controls-item{
+    display: inline-block;
+    margin: 0 4px;
+    width: 11px;
+    height: 11px;
+}
+
+.controls-item button{
+    display: block;
+    width: 11px;
+    height: 11px;
+    padding:0;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #696664;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    text-indent: -9999px;
+}
+
+.controls-item button.controls-active{
+  background-color: #696664;
+}
+
 .table-area{
 	display:none;
+}
+
+.first-progressbar{
+  display: none;
+  min-height: 200px;
+}
+.second-progressbar{
+  display: none;
+  min-height: 200px;
+}
+
+.my-progress{
+  position:relative;
+  width:100%;
+  height:10px;
+  background-color:#ddd;
+}
+.my-bar{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-color:#4CAF50;
+  transition: width 2s;
+}
+
+.btn-for-promise{
+  width: 100%;
+    height: 26px;
+    margin: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    cursor:pointer;
+}
+
+.article-ptomise{
+  width:100%;
+  height: 180px;
+  transition: width 1s, height 1s;
+}
+.head{
+  width: 100%;
+  height: 25px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  overflow: hidden;
+  transition: all 1s;
+}
+.content-in-progressbar{
+  width:100%;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+  border-radius:5px;
+  padding:10px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:all 1s;
+  box-sizing: border-box;
+}
+
+.for-image{
+  width:100px;
+  height: 100px;
+  background-image: url(../images/gora.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 1s;
+  display:inline-block;
+}
+
+.text-in-progressbar{
+  display:inline-block;
 }
 
 .sidebar-button{
@@ -296,6 +449,7 @@ figure {
     height: 50px;
     margin-right: 20px;
     padding: 10px 0;
+    color: #696664;
 }
 
 input[type = 'text']{

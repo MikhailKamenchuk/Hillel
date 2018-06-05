@@ -7,6 +7,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 let APPID = "77e6549a0d6f421bbc4caa4dec3beb20";
+let storage = window.localStorage;
 let temp;
 let loc;
 let icon;
@@ -14,6 +15,10 @@ let humidity;
 let wind;
 let direction;
 let city;
+
+if (storage.city){
+    inputWeather.value = storage.city;
+}
 
 document.querySelector('.submit-weather').addEventListener('click', getWeather);
 
@@ -34,8 +39,7 @@ function getWeather() {
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
     city = inputWeather.value.substring(0 , inputWeather.value.indexOf(','));
-    let storage = window.localStorage;
-    storage.setItem('city', city);
+    storage.setItem('city', inputWeather.value);
     updateByCity(city);
 }
 
