@@ -33,4 +33,6 @@ function createTable(){
  	 let j = cell.cellIndex + 1;
  	 alert(`${i}.${j}`);
  	}
+
+    event.preventDefault();
 }
