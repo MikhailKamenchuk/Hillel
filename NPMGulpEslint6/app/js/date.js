@@ -1,1 +1,68 @@
-"use strict";var hcner=document.querySelector(".header"),newDiv=document.createElement("div");newDiv.className="clock",hcner.appendChild(newDiv);var colon=document.createElement("span");colon.innerHTML=" : ";var hourSpan=document.createElement("span");hourSpan.id="hr",hourSpan.innerHTML="00",newDiv.appendChild(hourSpan),newDiv.appendChild(colon),newDiv.appendChild(colon);var minSpan=document.createElement("span");minSpan.id="min",minSpan.innerHTML="00",newDiv.appendChild(minSpan),newDiv.appendChild(colon.cloneNode(!0));var secSpan=document.createElement("span");secSpan.id="sec",secSpan.innerHTML="00",newDiv.appendChild(secSpan);var d=void 0,h=void 0,m=void 0,s=void 0,animate=void 0;function init(){d=new Date,h=d.getHours(),m=d.getMinutes(),s=d.getSeconds(),animate=setTimeout(init,1e3),clock()}function clock(){60==++s?(s=0,m++):60==m?(m=0,h++):24==h&&(h=0),go("sec",s),go("min",m),go("hr",h)}function go(n,e){e<10&&(e="0"+e),document.getElementById(n).innerHTML=e}window.onload=init;
+let header = document.querySelector('.header');
+
+let newDiv = document.createElement('div');
+newDiv.className = "clock";
+header.appendChild(newDiv);
+let colon = document.createElement('span');
+colon.innerHTML = " : ";
+let hourSpan = document.createElement('span');
+hourSpan.id = "hr";
+hourSpan.innerHTML = "00";
+newDiv.appendChild(hourSpan);
+newDiv.appendChild(colon);
+newDiv.appendChild(colon);
+let minSpan = document.createElement('span');
+minSpan.id = "min";
+minSpan.innerHTML = "00";
+newDiv.appendChild(minSpan);
+newDiv.appendChild(colon.cloneNode(true));
+let secSpan = document.createElement('span');
+secSpan.id = "sec";
+secSpan.innerHTML = "00";
+newDiv.appendChild(secSpan);
+
+let d;
+let h;
+let m;
+let s;
+let animate;
+
+function init(){
+	d = new Date();
+	h = d.getHours();
+	m = d.getMinutes();
+	s = d.getSeconds();
+	go('sec', s);
+	go('min', m);
+	go('hr', h);
+
+};
+
+animate = setInterval(function(){
+	s++;
+	if (s == 60){
+		s = 0;
+		
+		m++;
+		go('min', m);
+	} else if (m == 60){
+		m = 0;
+		h++;
+	} else if(h == 24){
+		
+		h = 0;
+		go('hr', h);
+	}
+	go('sec', s);
+}, 1000)
+
+
+function go(id, val){
+	if (val < 10){
+		val = '0' + val;
+	}
+	document.getElementById(id).innerHTML = val;
+}
+
+window.onload = init();
+
