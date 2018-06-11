@@ -89,13 +89,13 @@ $(function(){
 });
 
 $('th').click(function(){
-    let table = $(this).parents('table').eq(0);
-    let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+    var table = $(this).parents('table').eq(0);
+    var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
     this.asc = !this.asc;
     if (!this.asc){
     	rows = rows.reverse()
     };
-    for (let i = 0; i < rows.length; i++){
+    for (var i = 0; i < rows.length; i++){
     	table.append(rows[i]);
     };
 });
@@ -105,7 +105,31 @@ function comparer(index) {
         let valB = getCellValue(b, index);
         return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB);
     }
-}
+};
 function getCellValue(row, index){ 
 	return $(row).children('td').eq(index).text(); 
-}
+};
+
+$('#students-form #site').blur(function(){
+	let url = $('input[name="studentSite"]').val();
+	let pattern = /(https?:\/\/)?(www\.)?[-a-zа-яё0-9@:%._\+~#=]{2,256}\.[a-zа-яё]{1,4}(?::[0-9]+)?(\/?[-a-zа-яё0-9@:%_\+~#]+(\.[a-zа-яё0-9]+)?)+(\?[-а-яёa-z0-9@:%._\+~#]+(=[-a-zа-яё0-9@:%._\+~#]+)?((\&[-a-zа-яё0-9@:%._\+~#]+(=[-a-zа-яё0-9@:%._\+~#]+)?)+)?)?/i;    
+	if (pattern.test(url)) {
+        $('input[name="studentSite"]').removeClass("error");
+        return true;
+    } 
+        $('input[name="studentSite"]').addClass("error");
+        return false;
+});
+
+// $('#students-form #site').focus($('input[name="studentSite"]').removeClass("error"));
+
+// function validateStudentSite() {
+//     let url = document.getElementById("site").value;
+//     let pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+//     if (pattern.test(url)) {
+//         alert("Url is valid");
+//         return true;
+//     } 
+//         alert("Url is not valid!");
+//         return false;
+// };
