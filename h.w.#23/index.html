@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places&region=in" type="text/javascript"></script>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script src="./js/masked_input_1.4-min.js"></script>	
 	<script src="./js/script.js" async="index.html"></script>
 	<script src="./js/timer.js" async="index.html"></script>
 	<script src="./js/table.js" async="index.html"></script>
@@ -14,13 +16,14 @@
 	<script src="./js/weather.js" async="index.html"></script>
 	<script src="./js/date.js" async="index.html"></script>
 	<script src="./js/progress.js" async="index.html"></script>
-	<title>h.w.#22</title>
+	<script src="./js/students.js" async="index.html"></script>
+	<title>h.w.#23</title>
 </head>
 <body>
 	<div class="wrapper">
 		<header class="header">
 			<div class="navbar">
-				<a href="img/logo.svg" class="logo"></a>
+				<a href="images/logo.svg" class="logo"></a>
 			</div>
 			<div class="for-weather">
 				<input class="weather" type="text" placeholder="Select city">
@@ -32,12 +35,12 @@
      			  </div>	
     			  <div class="right">
 					<div class="top">
-	 					 <img id="icon" width="55px" src="img/codes/200.png" />
+	 					 <img id="icon" width="55px" src="images/codes/200.png" />
 					</div>
 
 	 				<div class="bottom">
 	   					<div class="humidity">
-	    					<img src="img/humidity.png" height="16px" />
+	    					<img src="images/humidity.png" height="16px" />
 	    					<span id="humidity">0</span>%
 	  		     		</div>
 	                    <div class="wind">
@@ -52,9 +55,8 @@
 		<section class="content">
 			<div class="main-content">
 				<button class="sidebar-button" id="sidebar-button"></button>
-				<!-- <div class="section-inner"> -->
+				<div class="section-inner">
 					<div class="inner-wrap">	
-						<div class="section-inner">	
 							<div id="first-slider">
 								<figure class="slide show">
 									<img src="https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699__340.jpg"><div class="description">Red-wine</div>
@@ -182,9 +184,62 @@
 									</div>
 								</div>
 							</div>
-						</div>	
+							<div class="for-table-students">
+								<form action="#" id="students-form">
+  									<fieldset>
+								          <legend>Student</legend>
+								          <div class="field">
+    								   		 <p>
+    								    	  	<label for="name">Name </label>
+    								     	 	<input type="text" id="name" name="studentName">
+    								     	 </p>
+       									 	<p>
+        								  		<label for="age">Age </label>
+        								  		<input type="number" min="15" id="age" name="studentAge">
+        								  		<label for="course">Course </label>
+        								  		<input type="number" min="1" max="5" id="course" name="courseOfStudy">
+        								 	 </p>
+        								  	<p>
+        								 	 	<label for="department">Department </label>
+        								 	 	<input type="text" id="department" name="department">
+        								 	 </p>
+        								 	 <p>
+        								 	 	<label for="site">Site </label>
+        								  		<input type="text" id="site" name="studentSite">
+        								  	</p>
+        								  	<p>
+        								  	<label for="phone">Phone </label>
+        								  		<input id="phone" type="tel" name="phone" pattern="^\+380(\s+)?\(?(17|25|29|33|44)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$">
+        								  	</p>
+        								  </div>
+        								  <div class="field">
+        								  	
+        								  	<button type="button" class="add-student" return false> Add student </button>
+        								  	<button type="button" class="btn-update" return false> Update </button>
+        								  </div>
+       								</fieldset>
+  								</form>
+  								<table class="students-table sortable">
+  									<thead>
+  										<tr>
+  											<th class="index-table">№</th>
+    										<th class="nameCol" data-type="string">Name</th>
+ 											<th class="ageCol" data-type="number">Age</th>
+ 											<th class="courseCol" data-type="number">Course</th>
+ 											<th class="departmentCol" data-type="string">Department</th>
+ 											<th class="siteCol" data-type="string">Site</th>
+ 											<th class="phoneCol" data-type="number">Phone</th>
+   											<th class="editCol">Edit</th>
+   	   										<th class="deleteCol">Del</th>		
+ 										</tr>
+  									</thead>
+  									<tbody>
+  										<tr></tr>
+  									</tbody>
+  								</table>
+							</div>
 					</div>
-				<!-- </div> -->
+				</div>
 				<div class="sidebar-wrapper" id="sidebar-wrapper">
 					<div class="sidebar">
 						<nav class="sidebar-menu">
