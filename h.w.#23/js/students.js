@@ -84,6 +84,7 @@ $(function(){
 			currentTr = null;   				
 		};
 		localStorage.setItem(".students-table", tournament.html());
+		$('#students-form')[0].reset();
 	});   		
 });
 

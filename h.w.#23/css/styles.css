@@ -375,6 +375,10 @@ figure {
   display:inline-block;
 }
 
+.for-table-students{
+  display: none;
+}
+
 #students-form{
   display: block;
   margin-bottom:30px;
