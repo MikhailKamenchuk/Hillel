@@ -1,5 +1,5 @@
 $(function(){
-		$(".add-student").click (function() {
+	$(".add-student").click (function() {
     	let studentName = $('#name').val();
 		let studentAge = $('#age').val();
 		let courseOfStudy = $('#course').val();
@@ -7,7 +7,16 @@ $(function(){
 		let studentSite = $('#site').val();
 		let studentPhone = $('#phone').val();
 		let studentIcon = Math.random()*10+1|0;
-		let tr = '<tr> <td></td> <td><img src="images/avatars/'+ studentIcon +'.gif" class="student-icon" alt="avatar"></td>  <td>'+ studentName +'</td>  <td>'+ studentAge +'</td>  <td>'+ courseOfStudy +'</td>  <td>'+ departnemtOfStudy +'</td>  <td><a href="'+ studentSite +'" > Link </a></td>  <td>'+ studentPhone +'</td><td class="btn-edit"> Edit </td><td class="btn-del"> Del </td></tr>';
+		let tr = '<tr> <td></td>' + 
+				 '<td><img src="images/avatars/'+ studentIcon +'.gif" class="student-icon" alt="avatar"></td>'+
+				 '<td>'+ studentName +'</td>'+
+				 '<td>'+ studentAge +'</td>'+
+				 '<td>'+ courseOfStudy +'</td>'+
+				 '<td>'+ departnemtOfStudy +'</td>'+
+				 '<td class="site-cell">'+ studentSite +'</td>'+
+				 '<td>'+ studentPhone +'</td>'+
+				 '<td class="btn-edit"> Edit </td>'+
+				 '<td class="btn-del"> Del </td></tr>';
 
    		$('tbody').prepend(tr);
 
@@ -15,15 +24,13 @@ $(function(){
 
    		dynamicIndex();
              
-        localStorage.setItem(".students-table", dbOfStudents.html());
+        localStorage.setItem(".students-table", $('tbody').html());
 
    		event.preventDefault();
 	});
 
-	let dbOfStudents = $('tbody');        
-
     if(localStorage.getItem(".students-table")) {
-        dbOfStudents.html(localStorage.getItem(".students-table"));
+        $('tbody').html(localStorage.getItem(".students-table"), dynamicIndex());
     }
     
 	MaskedInput({
@@ -65,7 +72,7 @@ $(function(){
 		if (confirm("Are you shure to delete?")){
 			$(this).closest('tr').remove();
 			dynamicIndex();
-			localStorage.setItem(".students-table", dbOfStudents.html());
+			localStorage.setItem(".students-table", $('tbody').html());
 		}
 	});
 
@@ -86,8 +93,8 @@ $(function(){
 			$(currentTr).find('td:eq(7)').text(phone);
 			currentTr = null;   				
 		}
-		localStorage.setItem(".students-table", dbOfStudents.html());
 		dynamicIndex();
+		localStorage.setItem(".students-table", $('tbody').html());
 		$('#students-form')[0].reset();
 		$('.btn-update, .btn-back').css('display', '')
 
@@ -132,32 +139,3 @@ $('#students-form').find('#site').blur(function(){
         return false;
 });
 
-
-
-/* ---------------------------- begin view ----------------------------- */
-let view = {
-
-};
-/* ----------------------------- end view ------------------------------ */
-
-
-
-/* ---------------------------- begin model ---------------------------- */
-let model = {
-
-};
-/* ----------------------------- end model ----------------------------- */
-
-
-
-/* -------------------------- begin controller ------------------------- */
-let controller = {
-
-};
-/* --------------------------- end controller -------------------------- */
-
-
-
-/* --------------------- anonymous initialize function ----------------- */
-
-/* --------------------- anonymous initialize function ----------------- */

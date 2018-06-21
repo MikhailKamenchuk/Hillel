@@ -376,7 +376,7 @@ figure {
 }
 
 .for-table-students{
-  display: none;
+  display: block;
   width:100%;
 }
 
@@ -475,9 +475,17 @@ figure {
   font-weight: bold;
 }
 
+.students-table tr{
+  vertical-align: middle;
+}
+
 .students-table th, .students-table td{
   border:3px solid #e1e0de;
   padding:4px 2px;
+}
+
+.students-table td.site-cell{
+  word-break: break-all;
 }
 
 .students-table img.student-icon{
@@ -488,18 +496,37 @@ figure {
 }
 
 .mediator{
-  width:100%;
-  height: 100%;
+    display:none;
+    width: 100%;
+    height: 100%;
 }
 
-.mediator .first-courses-list,
+.mediator .first-courses-list{
+  margin-bottom: 20px;
+}
+
+.mediator div.bracker{
+    display: flex;
+    justify-content: space-between;
+}
+
 .mediator .second-courses-list{
-  position:relative;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.mediator .for-student-photo{
+  margin:0 auto;
+}
+
+.mediator .for-student-photo img{
+  width:400px;
+  height: 400px;
 }
 
 .mediator .first-courses-list ul{
-  display: inline-block;
   white-space: nowrap;
+  margin-bottom:10px;
 }
 .mediator .first-courses-list li,
 .mediator .second-courses-list li{
@@ -515,7 +542,9 @@ figure {
 }
 
 .mediator .second-courses-list ul{
-
+  margin-top: 50px;
+  margin-left:10px;
+  display: inline-block;
 }
 
 .mediator .first-courses-list li{
@@ -524,8 +553,11 @@ figure {
 }
 
 .mediator .second-courses-list li{
-  display:block;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
+}
+
+.mediator ul.students-list{
+  display:none;
 }
 
 .sidebar-button{
