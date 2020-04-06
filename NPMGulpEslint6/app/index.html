@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places&region=in" type="text/javascript"></script>
+	<script src="./js/script.js" async="index.html"></script>
+	<script src="./js/timer.js" async="index.html"></script>
+	<script src="./js/table.js" async="index.html"></script>
+	<script src="./js/slider.js" async="index.html"></script>
+	<script src="./js/weather.js" async="index.html"></script>
+	<script src="./js/date.js" async="index.html"></script>
+	<script src="./js/progress.js" async="index.html"></script>
+	<title>h.w.#22</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="navbar">
+				<a href="img/logo.svg" class="logo"></a>
+			</div>
+			<div class="for-weather">
+				<input class="weather" type="text" placeholder="Select city">
+				<button class="submit-weather">Get</button>
+				<div class="weather-app">
+			      <div class="left">
+					<div class="temperature"><span id="temperature">0</span>&deg;</div> 
+					<div class="location"><span id="location">Unknown</span></div>
+     			  </div>	
+    			  <div class="right">
+					<div class="top">
+	 					 <img id="icon" width="55px" src="img/codes/200.png" />
+					</div>
+
+	 				<div class="bottom">
+	   					<div class="humidity">
+	    					<img src="img/humidity.png" height="16px" />
+	    					<span id="humidity">0</span>%
+	  		     		</div>
+	                    <div class="wind">
+	    					<span id="wind">0</span> kmph </br><span id="direction">N</span>
+	  					</div>
+	  
+					</div>
+    		  	  </div>
+			    </div>
+			</div>
+		</header>
+		<section class="content">
+			<div class="main-content">
+				<button class="sidebar-button" id="sidebar-button"></button>
+				<!-- <div class="section-inner"> -->
+					<div class="inner-wrap">	
+						<div class="section-inner">	
+							<div id="first-slider">
+								<figure class="slide show">
+									<img src="https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699__340.jpg"><div class="description">Red-wine</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2017/06/24/23/03/railway-2439189__340.jpg"><div class="description">Railway</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2017/06/30/21/28/sunset-2459855__340.jpg"><div class="description">Sunset</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2017/06/24/23/41/beer-2439237__340.jpg"><div class="description">Bear</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2016/03/09/15/29/eagle-1246681__340.jpg"><div class="description">Eagle</div>
+								</figure>
+							</div>
+							<div id="another-slider">
+								<figure class="slide show">
+									<img src="https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699__340.jpg"><div class="description">Red-wine</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2017/06/24/23/03/railway-2439189__340.jpg"><div class="description">Railway</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2017/06/30/21/28/sunset-2459855__340.jpg"><div class="description">Sunset</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2017/06/24/23/41/beer-2439237__340.jpg"><div class="description">Bear</div>
+								</figure>
+								<figure class="slide">
+									<img src="https://cdn.pixabay.com/photo/2016/03/09/15/29/eagle-1246681__340.jpg"><div class="description">Eagle</div>
+								</figure>
+								<div class="arrows">
+      								<span data-direct="-1">«</span>
+     								<span data-direct="1">»</span>
+   								</div>
+								<div class="controls">
+									<div class="controls-wrapper">
+										<div class="controls-item">
+											<button class="controls-active">1</button>
+										</div>
+										<div class="controls-item">
+											<button>2</button>
+										</div>
+										<div class="controls-item">
+											<button>3</button>
+										</div>
+										<div class="controls-item">
+											<button>4</button>
+										</div>
+										<div class="controls-item">
+											<button>5</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="table-area">
+								<form action="#">
+									<div>
+										<lable for="col">columns</lable>
+										<input type="text" id="col">
+									</div>
+									<div>
+										<lable for="row">rows</lable>
+										<input type="text" id="row">
+									</div>
+									<div>
+										<input id="submit" type="submit" value='Create new table'>
+									</div>
+								</form>
+								<div id="for-table"></div>
+							</div>
+							<div class="first-progressbar">
+								<button class="btn-for-promise">Hide all artiticle</button>
+								<div class="my-progress">
+									<div class="my-bar"></div>
+								</div>
+								<div class="article-ptomise">
+									<h2 class="head">Header</h2>
+									<div class="content-in-progressbar">
+										<div class="for-image"></div>
+										<div class="text-in-progressbar">Some text. I can do this! </div>
+									</div>
+								</div>
+								<div class="article-ptomise">
+									<h2 class="head">Header</h2>
+									<div class="content-in-progressbar">
+										<div class="for-image"></div>
+										<div class="text-in-progressbar">Some text. I can do this! </div>
+									</div>
+								</div>
+								<div class="article-ptomise">
+									<h2 class="head">Header</h2>
+									<div class="content-in-progressbar">
+										<div class="for-image"></div>
+										<div class="text-in-progressbar">Some text. I can do this! </div>
+									</div>
+								</div>
+							</div>
+							<div class="second-progressbar">
+								<button class="btn-for-promise">Hide all artiticle</button>
+								<div class="my-progress">
+									<div class="my-bar"></div>
+								</div>
+								<div class="article-ptomise">
+									<h2 class="head">Header</h2>
+									<div class="content-in-progressbar">
+										<div class="for-image"></div>
+										<div class="text-in-progressbar">Some text. I can do this! </div>
+									</div>
+								</div>
+								<div class="article-ptomise">
+									<h2 class="head">Header</h2>
+									<div class="content-in-progressbar">
+										<div class="for-image"></div>
+										<div class="text-in-progressbar">Some text. I can do this! </div>
+									</div>
+								</div>
+								<div class="article-ptomise">
+									<h2 class="head">Header</h2>
+									<div class="content-in-progressbar">
+										<div class="for-image"></div>
+										<div class="text-in-progressbar">Some text. I can do this! </div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				<!-- </div> -->
+				<div class="sidebar-wrapper" id="sidebar-wrapper">
+					<div class="sidebar">
+						<nav class="sidebar-menu">
+							<ul class="sidebar-list">
+								<li class="sidebar-item">
+									<a href="#" class="adding-slider">Sliders</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#" class="adding-table">Table</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#" class="adding-first-progressbar">First progressbar</a>
+								</li>
+								<li class="sidebar-item">
+									<a href="#" class="adding-second-progressbar">Second progressbar</a>
+								</li>								
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div id="my-timer">00:00:00</div>
+		</footer>
+	</div>
+</body>
+</html>

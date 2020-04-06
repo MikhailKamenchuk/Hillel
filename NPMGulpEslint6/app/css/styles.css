@@ -1,0 +1,474 @@
+html, body{
+  height:100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 60px;
+  border-bottom: 4px solid #e1e0de; 
+  z-index: 2;
+  background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.for-weather{
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.navbar{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  width: 170px;
+  height: 100%;
+  display: block;
+  float: left;
+  padding-top: 10px; }
+  @media screen and (min-width: 760px) and (min-device-width: 760px) {
+    .logo {
+      width: 280px; } }
+  @media (min-width: 840px) {
+    .logo {
+      width: 120px; } }
+  @media screen and (min-width: 1024px) {
+    .logo {
+      width: 220px; } }
+  .logo:after {
+    background: url(../img/logo-small.svg) center center no-repeat;
+    background-size: 50%;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40px; }
+    @media screen and (min-width: 760px) and (min-device-width: 760px) {
+      .logo:after {
+        background: url(../img/logo.svg) center center no-repeat; } }
+    @media (min-width: 840px) {
+      .logo:after {
+        background: url(../img/logo-small.svg) center center no-repeat; } }
+    @media screen and (min-width: 1024px) {
+      .logo:after {
+        background: url(../img/logo.svg) center center no-repeat; } }
+  .logo:hover {
+    opacity: 0.7; }
+
+input[type = "text"].weather {
+    width: 150px;
+    height: 16px;
+    outline: none;
+    border-radius: 5px;
+    color: #696664;
+    padding: 4px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.submit-weather{
+    width: 36px;
+    height: 27px;
+    padding: 4px;
+    border-radius: 5px;
+    color: #696664;
+    margin-left: 9px;
+    background-color: ghostwhite;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.weather-app {
+    margin: 1px 10px;
+    width: 300px;
+    height: 54px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #888888;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.left {
+    float: left;
+    background: #f5f2f0;
+    padding: 5px;
+    width: 160px;
+    height: 100%;
+    box-sizing: border-box;
+    color: #696664;
+}
+
+.temperature {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    width: 150px;
+}
+
+.location {
+    font-size: 18px;
+    width:150px;
+}
+
+.right {
+    float: right;
+    width:140px;
+    height:100%;
+}
+
+.top {
+    height: 100%;
+    width: 50%;
+    float: left;
+    background: #cec;
+}
+
+
+
+.bottom {
+    height: 100%;
+    background: #669999;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.humidity {
+    padding: 2px;
+}
+
+.wind {
+}
+
+.clock{
+    position: fixed;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 110px;
+    padding-top: 20px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #696664;
+    background-color: white;
+    z-index: 99;
+}
+
+.content {
+  flex: 1 0 auto;
+  width:100%;
+}
+
+.main-content{
+  padding-left: 250px;
+  
+}
+.section-inner{
+  padding: 15px 110px;
+  overflow: auto;
+  margin: 64px 0;  
+}
+
+.inner-wrap{
+    padding-bottom: 20px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inner-wrap p{
+	font-size: 24px;
+}
+
+#slider{
+  display:none;
+}
+
+#first-slider, #another-slider{
+  display:none;
+  width: 430px;
+  min-height: 250px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#another-slider{
+  position:relative;
+}
+.slide{
+  position: absolute;
+  display: none;
+}
+.show{
+  display: block;
+}
+figure img {
+    height: 200px;
+    width: auto;
+}
+.description{
+  display:none;
+  color: #696664;
+}
+figure {
+    width: 400px;
+    height:215px;
+    background-color: #dddd;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto 5px auto;
+    color: #000;
+}
+
+.arrows {
+    width: 430px;
+    margin: 0 auto;
+  position:absolute;
+  top:100px;
+  left:0;
+}
+ 
+.arrows span {
+    font-size: 1.5em;
+    cursor: pointer;
+  color:#696664;
+  margin:0 10px;
+}
+
+.arrows span:last-child {
+    float: right;
+}
+
+.controls{
+    width: 100%;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    z-index: 1;
+}
+
+.controls-wrapper{
+    display: inline-block;
+    height: 11px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.controls-item{
+    display: inline-block;
+    margin: 0 4px;
+    width: 11px;
+    height: 11px;
+}
+
+.controls-item button{
+    display: block;
+    width: 11px;
+    height: 11px;
+    padding:0;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #696664;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    text-indent: -9999px;
+}
+
+.controls-item button.controls-active{
+  background-color: #696664;
+}
+
+.table-area{
+	display:none;
+}
+
+.first-progressbar{
+  display: none;
+  min-height: 200px;
+}
+.second-progressbar{
+  display: none;
+  min-height: 200px;
+}
+
+.my-progress{
+  position:relative;
+  width:100%;
+  height:10px;
+  background-color:#ddd;
+}
+.my-bar{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-color:#4CAF50;
+  transition: width 2s;
+}
+
+.btn-for-promise{
+  width: 100%;
+    height: 26px;
+    margin: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    cursor:pointer;
+}
+
+.article-ptomise{
+  width:100%;
+  height: 180px;
+  transition: width 1s, height 1s;
+}
+.head{
+  width: 100%;
+  height: 25px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  overflow: hidden;
+  transition: all 1s;
+}
+.content-in-progressbar{
+  width:100%;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+  border-radius:5px;
+  padding:10px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:all 1s;
+  box-sizing: border-box;
+}
+
+.for-image{
+  width:100px;
+  height: 100px;
+  background-image: url(../img/gora.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 1s;
+  display:inline-block;
+}
+
+.text-in-progressbar{
+  display:inline-block;
+}
+
+.sidebar-button{
+  position: fixed;
+    top: 78px;
+    left: 17px;
+    width: 30px;
+    height: 27px;
+    border: none;
+    border-top: 5px solid #dddddd;
+    border-bottom: 5px solid #dddddd;
+    outline: 0;
+    z-index: 3;
+    background-color: transparent;
+}
+
+.sidebar-button:before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  width: 30px;
+  height: 5px;
+  background-color: #dddddd;
+}
+
+.sidebar-button:active{
+  transition-duration: 3px;
+}
+
+.sidebar-wrapper{
+  position:fixed;
+  left:0;
+  top: 0;
+  padding-top:64px;
+  z-index: 1;
+  background-color: #f5f2f0;
+  width: 250px;
+  height: 100%;
+}
+
+.sidebar-menu{
+    margin-left: 35px;
+    margin-top: 36px;
+	padding: 0 30px;
+    overflow: hidden;
+}
+.sidebar-item{
+  padding:10px 0;
+}
+
+.sidebar-item a{
+  text-decoration: none;
+  color:#696664;;
+}
+.sidebar-item a:hover, .sidebar-item a:active{
+  color:#b20600
+}
+.footer { 
+  height:60px;
+  border-top:2px solid #dddddd;
+  z-index: 2;
+  background-color: white;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+}
+#my-timer{
+	font-size: 30px;
+    float: right;
+    width: 120px;
+    height: 50px;
+    margin-right: 20px;
+    padding: 10px 0;
+    color: #696664;
+}
+
+input[type = 'text']{
+  width:20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+form div{
+	margin: 10px 0;
+}
+
+td {
+  border: 1px solid gray;
+  padding: 2px 5px;
+  text-align: center;
+  min-width: 20px;
+  height: 15px;
+}
+
+
